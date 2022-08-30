@@ -44,7 +44,7 @@ local function renderEditBox()
         if self.visible then
             local text = self.mask and string.gsub(self.text, ".", "*") or self.text
             local textLength = len(text)
-            local textWidth = dxGetTextWidth(text, 1, font)
+            local textWidth = dxGetTextWidth(text, 1, "default")
             local isTextSide = (self.x + textWidth > self.x + self.w and "right" or "left")
             if (textLength == 0 and not self.atived) then
                 dxDrawText(self.name, self.x, self.y, self.x + self.w, self.y + self.h, tocolor(150, 150, 150, 255), 1.0, "default", isTextSide, "center", true, false, true)
